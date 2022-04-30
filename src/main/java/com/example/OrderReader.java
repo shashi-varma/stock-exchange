@@ -29,7 +29,7 @@ public class OrderReader {
     public OrderDetails next() throws IOException {
         String line = br.readLine();
         if(line == null) return null;
-        String[] order = line.split(" ");
+        String[] order = line.split("\\s+");
         assert order.length == 6 : "invalid order found in the file";
 
         String orderId = order[0];
