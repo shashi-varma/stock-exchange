@@ -13,10 +13,13 @@ public class Main {
         OrderBook orderBook = new OrderBook();
         OrderMatcher orderMatcher = OrderMatcher.getInstance();
 
+        // read orders one by one and match it with existing orders of opposite type
         OrderDetails orderDetails = orderReader.next();
         while(orderDetails != null){
             orderMatcher.match(orderBook, orderDetails);
             orderDetails = orderReader.next();
         }
+
+        orderReader.close();
     }
 }

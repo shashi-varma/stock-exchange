@@ -8,7 +8,7 @@ import com.example.model.SellOrder;
 import java.util.PriorityQueue;
 
 /**
- * singleton
+ * A stateless class consisting the order matching logic
  */
 public class OrderMatcher {
 

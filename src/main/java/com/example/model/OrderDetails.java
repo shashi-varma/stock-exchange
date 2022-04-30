@@ -2,15 +2,15 @@ package com.example.model;
 
 public abstract class OrderDetails {
 
-    private String orderId;
+    private final String orderId;
 
-    private Long timeInMilliSec;
+    private final Long timeInMilliSec;
 
-    private String stock;
+    private final String stock;
 
-    private OrderType orderType;
+    private final OrderType orderType;
 
-    private Double price;
+    private final Double price;
 
     private Integer quantity;
 

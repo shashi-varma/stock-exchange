@@ -11,7 +11,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- *
+ * Utility class to open the input file and read and parse the order details
  */
 public class OrderReader {
 
@@ -23,9 +23,8 @@ public class OrderReader {
     }
 
     /**
-     *
-     * @return
-     * @throws IOException
+     * Method to get the next order from the input file.
+     * Returns null if end of the file is reached
      */
     public OrderDetails next() throws IOException {
         String line = br.readLine();
@@ -57,5 +56,9 @@ public class OrderReader {
         int hours = Integer.parseInt(time[0]);
         int minutes = Integer.parseInt(time[1]);
         return (hours*60L + minutes)*60*1000;
+    }
+
+    public void close() throws IOException {
+        br.close();
     }
 }

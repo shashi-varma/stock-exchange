@@ -8,6 +8,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
+/**
+ * OrderBook keeps track of orders per stock, organised with priority given to sell order with the lowest price and buy order with the highest price
+ */
 public class OrderBook {
 
     private final Map<String, PriorityQueue<BuyOrder>> buyOrderBook;
