@@ -42,7 +42,7 @@ public class OrderMatcher {
     public void matchBuyOrder(BuyOrder buyOrder, PriorityQueue<BuyOrder> buyOrderMarketDepth, PriorityQueue<SellOrder> sellOrderMarketDepth){
         while(!sellOrderMarketDepth.isEmpty()){
             SellOrder topSellOrder = sellOrderMarketDepth.peek();
-            if (topSellOrder.getPrice() < buyOrder.getPrice()){
+            if (topSellOrder.getPrice() <= buyOrder.getPrice()){
                 // these orders match
                 printMatchedOrders(buyOrder, topSellOrder);
 
@@ -70,7 +70,7 @@ public class OrderMatcher {
     public void matchSellOrder(SellOrder sellOrder, PriorityQueue<BuyOrder> buyOrderMarketDepth, PriorityQueue<SellOrder> sellOrderMarketDepth){
         while(!buyOrderMarketDepth.isEmpty()){
             BuyOrder topBuyOrder = buyOrderMarketDepth.peek();
-            if (topBuyOrder.getPrice() > sellOrder.getPrice()){
+            if (topBuyOrder.getPrice() >= sellOrder.getPrice()){
                 // these orders match
                 printMatchedOrders(topBuyOrder, sellOrder);
 
